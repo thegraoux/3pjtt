@@ -1,0 +1,15 @@
+<?php $__env->startSection('content'); ?>
+<body>
+<div>
+    <center><h1> Upload a file</h1></center>
+        <form action="/store" enctype="multipart/form-data" method="post">
+           <?php echo e(csrf_field()); ?>
+
+            <input type="file" name="image">
+            <br>
+            <input type="submit" value="upload">
+        </form>
+</div>
+</body>
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

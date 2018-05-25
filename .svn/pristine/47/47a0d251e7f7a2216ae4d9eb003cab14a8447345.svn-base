@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class uploadController extends Controller
+{
+    public function index()
+    {
+        return view('upload.upload');
+    }
+    public function store(request $request)
+    {
+        chmod('C:\laragon\www\3PJT\public', 0777);
+        $request->file('image');
+        return $request->image->store('public');
+
+    }
+}
